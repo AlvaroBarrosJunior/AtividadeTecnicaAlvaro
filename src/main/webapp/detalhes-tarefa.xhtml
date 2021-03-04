@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Editar Tarefa</title>
+	<link rel="stylesheet" href="../estilos.css"></link>
+</h:head>
+<h:body>
+	<div class="cabecalho">
+		<h:outputText
+			value="SIGT - Sistema Integrado de Gerênciamento de Tarefas"
+			styleClass="tituloPrincipal"></h:outputText>
+		<h:form>
+			<h:commandLink value="Home"
+				action="#{tarefaBean.paginaListagemDeTarefas}" styleClass="links"></h:commandLink>
+			<h:commandLink value="Cadastrar Tarefa"
+				action="#{tarefaBean.paginaCadastrarTarefa}" styleClass="links"></h:commandLink>
+			<h:commandLink value="Colaboradores"
+				action="#{tarefaBean.paginaColaboradores}" styleClass="links"></h:commandLink>
+		</h:form>
+	</div>
+	<div class="titulo">
+		<h:outputText value="Detalhes da Tarefa"></h:outputText>
+	</div>
+	<div class="corpo">
+		<h:form>
+			<h:panelGrid columns="2" cellspacing="20" width="940">
+
+				<h:outputText value="Título"></h:outputText>
+				<h:inputText value="#{tarefa.titulo}" size="68" readonly="true"></h:inputText>
+
+				<h:outputText value="Descrição"></h:outputText>
+				<h:inputTextarea cols="82" rows="6" value="#{tarefa.descricao}"
+					readonly="true"></h:inputTextarea>
+			</h:panelGrid>
+
+			<h:panelGrid columns="4" cellspacing="20" width="800">
+				<h:outputText value="Responsável"></h:outputText>
+				<h:inputText value="#{tarefa.responsavel.nome}" readonly="true"></h:inputText>
+
+				<h:outputText value="Prioridade"></h:outputText>
+				<h:inputText value="#{tarefa.prioridade}" readonly="true"></h:inputText>
+
+				<h:outputText value="Deadline"></h:outputText>
+				<h:inputText value="#{tarefa.prazo}" readonly="true">
+					<f:convertDateTime pattern="dd/mm/yyyy" />
+				</h:inputText>
+
+				<h:outputText value="Situação"></h:outputText>
+				<h:inputText value="#{tarefa.situacao}" readonly="true"></h:inputText>
+
+				<f:facet name="footer">
+					<h:commandButton action="#{tarefaBean.paginaListagemDeTarefas}"
+						value="Voltar"></h:commandButton>
+				</f:facet>
+			</h:panelGrid>
+		</h:form>
+	</div>
+</h:body>
+</html>

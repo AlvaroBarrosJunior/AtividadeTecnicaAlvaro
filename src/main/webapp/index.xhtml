@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Gerenciador de Tarefas</title>
+	<link rel="stylesheet" href="../estilos.css"></link>
+</h:head>
+<h:body>
+	<div class="cabecalho">
+		<h:outputText
+			value="SIGT - Sistema Integrado de Gerênciamento de Tarefas"
+			styleClass="tituloPrincipal"></h:outputText>
+		<h:form>
+		<h:commandLink value="Home"
+				action="#{tarefaBean.paginaListagemDeTarefas}" styleClass="links"></h:commandLink>
+			<h:commandLink value="Cadastrar Tarefa"
+				action="#{tarefaBean.paginaCadastrarTarefa}" styleClass="links"></h:commandLink>
+			<h:commandLink value="Colaboradores"
+				action="#{tarefaBean.paginaColaboradores}" styleClass="links"></h:commandLink>
+		</h:form>
+	</div>
+
+	<div class="titulo">
+		<h:outputText value="Listagem de Tarefas"></h:outputText>
+	</div>
+
+	<div class="corpo">
+		<h:form>
+			<h:panelGrid columns="2" cellspacing="20" width="940">
+				<h:outputText value="Número"></h:outputText>
+				<h:inputText value="#{tarefaBean.id}" size="68"></h:inputText>
+
+				<h:outputText value="Titulo / Descrição"></h:outputText>
+				<h:inputTextarea cols="82" rows="6" value="#{tarefaBean.texto}"></h:inputTextarea>
+			</h:panelGrid>
+
+			<h:panelGrid columns="5" cellspacing="20" width="800">
+				<h:outputText value="Responsável"></h:outputText>
+				<h:selectOneMenu value="#{tarefaBean.responsavel}" autoWidth="false"
+					style="width:220px;" id="responsavel">
+					<f:converter converterId="simpleEntity"></f:converter>
+					<f:selectItem itemLabel="Selecionar" itemValue=""></f:selectItem>
+					<f:selectItems value="#{colaboradorBean.colaboradores}" var="col"
+						itemLabel="#{col.nome}" itemValue="#{col}" />
+				</h:selectOneMenu>
+
+				<h:outputText value="Situação"></h:outputText>
+				<h:selectOneMenu value="#{tarefaBean.situacao}" autoWidth="false"
+					style="width:220px;">
+					<f:selectItem itemLabel="Selecionar" itemValue=""></f:selectItem>
+					<f:selectItem itemLabel="Em andamento" itemValue="Em andamento"></f:selectItem>
+					<f:selectItem itemLabel="Concluída" itemValue="Concluída"></f:selectItem>
+				</h:selectOneMenu>
+
+				<h:commandButton actionListener="#{tarefaBean.buscarTarefas}"
+					value="Buscar"></h:commandButton>
+
+			</h:panelGrid>
+			<h:dataTable value="#{tarefaBean.listaDeTarefas}" var="tarefa"
+				styleClass="tabelaTarefas" headerClass="cabecalhoTabelaTarefas"
+				rowClasses="linhaTabelaTarefas" >
+				<h:column>
+					<f:facet name="header">Número</f:facet>
+					<h:outputText value="#{tarefa.id}"></h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Título</f:facet>
+					<h:outputText value="#{tarefa.titulo}"></h:outputText>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Responsável</f:facet>
+					<p class="colunaGrande">
+						<h:outputText value="#{tarefa.responsavel.label}"></h:outputText>
+					</p>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Ações</f:facet>
+					<div class="colunaGrande">
+						<h:commandLink value="Editar"
+							action="#{tarefaBean.paginaAtualizarTarefa(tarefa.id)}"
+							styleClass="linksAcoes"></h:commandLink>
+						<h:outputText value=" | "></h:outputText>
+						<h:commandLink value="Excluir"
+							action="#{tarefaBean.deletarTarefa(tarefa.id)}"
+							styleClass="linksAcoes"></h:commandLink>
+						<h:outputText value=" | "></h:outputText>
+						<h:commandLink value="Concluir"
+							action="#{tarefaBean.atualizarSituacaoTarefa(tarefa)}"
+							styleClass="linksAcoes"></h:commandLink>
+						<h:outputText value=" | "></h:outputText>
+						<h:commandLink value="Ver"
+							action="#{tarefaBean.paginaDetalhesTarefa(tarefa.id)}"
+							styleClass="linksAcoes"></h:commandLink>
+					</div>
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</div>
+</h:body>
+</html>

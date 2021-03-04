@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;	
+}
+
+.cabecalho {
+	background: #394674;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	height: 40px;
+	border-bottom: 3px solid #EAA641;
+	align-items: center;
+	padding: 0 40px;
+}
+
+.tituloPrincipal {
+	font-weight: bold;
+}
+
+.links{
+	text-decoration: none;
+	color: white;
+	margin: 0 10px;
+}
+
+.links:hover{
+	color: orange;
+}
+
+.titulo {
+	background: #C4D2EB;
+	margin: 0;
+	padding: 25px 40px;
+	font-weight: bold;
+}
+
+.corpo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 35px;
+}
+
+.tabelaTarefas {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.cabecalhoTabelaTarefas {
+   text-align:center;
+   background: #C4D2EB;
+   border-bottom:1px solid #000000;  
+   padding: 5px 20px;
+}
+
+.linhaTabelaTarefas {
+   text-align:center;
+   background:white;
+}
+
+.colunaGrande {
+	width: 315px;
+	margin: 0;
+	padding: 0;
+}
+
+.linksAcoes {
+	text-decoration: none;
+	color: black;
+}
+
+.linksAcoes:hover {
+	color: #394674;
+}
+
+
+
