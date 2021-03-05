@@ -23,12 +23,12 @@ f) Visualizar tarefa: a funcionalidade visualizar tarefa se encontra na coluna a
 
 ## Telas do sistema
 -Tela inicial
-![Firefox_Screenshot_2021-03-05T00-38-51 425Z](https://user-images.githubusercontent.com/8556553/110050157-19d29500-7d32-11eb-8c0f-7adb78271ffb.png)!
+![Firefox_Screenshot_2021-03-05T00-38-51 425Z](https://user-images.githubusercontent.com/8556553/110050157-19d29500-7d32-11eb-8c0f-7adb78271ffb.png)
 -Tela de cadastro de tarefas
-![Firefox_Screenshot_2021-03-05T00-35-34 843Z](https://user-images.githubusercontent.com/8556553/110050392-8f3e6580-7d32-11eb-8a04-52aeba4639b4.png)!
+![Firefox_Screenshot_2021-03-05T00-35-34 843Z](https://user-images.githubusercontent.com/8556553/110050392-8f3e6580-7d32-11eb-8a04-52aeba4639b4.png)
 -Tela de edição de tarefas
-![Firefox_Screenshot_2021-03-05T00-37-30 764Z](https://user-images.githubusercontent.com/8556553/110050216-3a025400-7d32-11eb-8acf-3caf9f766aaf.png)!
+![Firefox_Screenshot_2021-03-05T00-37-30 764Z](https://user-images.githubusercontent.com/8556553/110050216-3a025400-7d32-11eb-8acf-3caf9f766aaf.png)
 -Tela de visualização de tarefas
-![Firefox_Screenshot_2021-03-05T00-43-29 706Z](https://user-images.githubusercontent.com/8556553/110050476-b5fc9c00-7d32-11eb-9011-7025bc173c38.png)!
+![Firefox_Screenshot_2021-03-05T00-43-29 706Z](https://user-images.githubusercontent.com/8556553/110050476-b5fc9c00-7d32-11eb-9011-7025bc173c38.png)
 -Tela de colaboradores
-![Firefox_Screenshot_2021-03-05T00-26-27 656Z](https://user-images.githubusercontent.com/8556553/110050553-e47a7700-7d32-11eb-8379-d90af9149fae.png)!
+![Firefox_Screenshot_2021-03-05T00-26-27 656Z](https://user-images.githubusercontent.com/8556553/110050553-e47a7700-7d32-11eb-8379-d90af9149fae.png)
