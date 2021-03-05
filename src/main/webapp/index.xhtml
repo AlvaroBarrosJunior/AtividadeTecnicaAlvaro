@@ -15,7 +15,7 @@
 			value="SIGT - Sistema Integrado de Gerênciamento de Tarefas"
 			styleClass="tituloPrincipal"></h:outputText>
 		<h:form>
-		<h:commandLink value="Home"
+			<h:commandLink value="Home"
 				action="#{tarefaBean.paginaListagemDeTarefas}" styleClass="links"></h:commandLink>
 			<h:commandLink value="Cadastrar Tarefa"
 				action="#{tarefaBean.paginaCadastrarTarefa}" styleClass="links"></h:commandLink>
@@ -62,7 +62,7 @@
 			</h:panelGrid>
 			<h:dataTable value="#{tarefaBean.listaDeTarefas}" var="tarefa"
 				styleClass="tabelaTarefas" headerClass="cabecalhoTabelaTarefas"
-				rowClasses="linhaTabelaTarefas" >
+				rowClasses="linhaTabelaTarefas">
 				<h:column>
 					<f:facet name="header">Número</f:facet>
 					<h:outputText value="#{tarefa.id}"></h:outputText>
@@ -70,14 +70,14 @@
 
 				<h:column>
 					<f:facet name="header">Título</f:facet>
-					<h:outputText value="#{tarefa.titulo}"></h:outputText>
+					<div class="colunaGrande">
+						<h:outputText value="#{tarefa.titulo}"></h:outputText>
+					</div>
 				</h:column>
 
 				<h:column>
 					<f:facet name="header">Responsável</f:facet>
-					<p class="colunaGrande">
-						<h:outputText value="#{tarefa.responsavel.label}"></h:outputText>
-					</p>
+					<h:outputText value="#{tarefa.responsavel.label}"></h:outputText>
 				</h:column>
 
 				<h:column>
