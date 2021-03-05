@@ -54,9 +54,10 @@
 				</h:selectOneMenu>
 
 				<h:outputText value="Deadline"></h:outputText>
-				<h:inputText value="#{tarefaBean.tarefa.prazo}">
-					<f:convertDateTime pattern="dd/mm/yyyy" />
+				<h:inputText value="#{tarefaBean.tarefa.prazo}" >
+					<f:convertDateTime pattern="dd/mm/yyyy" dateStyle=""/>
 				</h:inputText>
+				<h:outputText value="dd/mm/aaaa"></h:outputText>
 
 				<f:facet name="footer">
 					<h:commandButton action="#{tarefaBean.cadastrarTarefa}"
